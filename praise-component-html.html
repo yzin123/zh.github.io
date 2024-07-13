@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>這是我認識的致宏哥</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .topic-button {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .topic-button:hover {
+            opacity: 0.9;
+        }
+        #verseCard {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+            display: none;
+        }
+        #verseName {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #verseContent {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>這是我認識的致宏哥</h1>
+        <div class="button-container">
+            <button class="topic-button" style="background-color: #f1c40f;" onclick="showVerse(0)">帥氣笑容</button>
+            <button class="topic-button" style="background-color: #2ecc71;" onclick="showVerse(1)">摯愛家人</button>
+            <button class="topic-button" style="background-color: #3498db;" onclick="showVerse(2)">處世謙和</button>
+            <button class="topic-button" style="background-color: #9b59b6;" onclick="showVerse(3)">聰明智慧</button>
+            <button class="topic-button" style="background-color: #e91e63;" onclick="showVerse(4)">專心仰望</button>
+        </div>
+        <div id="verseCard">
+            <div id="verseName"></div>
+            <div id="verseContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const verses = [
+            {
+                name: "帥氣笑容",
+                content: "我的心哪，你為何憂悶？為何在我裡面煩躁？應當仰望神，因他笑臉幫助我；我還要稱讚他。 - 詩篇 42:5",
+                bgColor: "#fff9c4"
+            },
+            {
+                name: "摯愛家人",
+                content: "你們各人都當愛妻子，如同愛自己一樣。妻子也當敬重她的丈夫。 - 以弗所書 5:33",
+                bgColor: "#c8e6c9"
+            },
+            {
+                name: "處世謙和",
+                content: "各人不要單顧自己的事，也要顧別人的事。 - 腓立比書 2:4",
+                bgColor: "#bbdefb"
+            },
+            {
+                name: "聰明智慧",
+                content: "敬畏耶和華是智慧的開端；認識至聖者便是聰明。 - 箴言 9:10",
+                bgColor: "#e1bee7"
+            },
+            {
+                name: "專心仰望",
+                content: "信就是所望之事的實底，是未見之事的確據。 - 希伯來書11:1",
+                bgColor: "#f8bbd0"
+            }
+        ];
+
+        function showVerse(index) {
+            const verse = verses[index];
+            document.getElementById("verseName").textContent = verse.name;
+            document.getElementById("verseContent").textContent = verse.content;
+            document.getElementById("verseCard").style.display = "block";
+            document.getElementById("verseCard").style.backgroundColor = verse.bgColor;
+        }
+    </script>
+</body>
+</html>
